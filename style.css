@@ -12,6 +12,16 @@
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(255, 255, 255, 0.2);
   --switch-bg-url: url(./assets/moon-stars.svg);
+  --border-gradient-before: linear-gradient(
+    146deg,
+    rgba(50, 27, 144, 1) 15%,
+    rgba(125, 25, 163, 1) 61%
+  );
+  --border-gradient-after: linear-gradient(
+    324deg,
+    rgba(50, 27, 144, 1) 15%,
+    rgba(125, 25, 163, 1) 61%
+  );
 }
 
 .light {
@@ -22,6 +32,16 @@
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(0, 0, 0, 0.2);
   --switch-bg-url: url(./assets/sun.svg);
+  --border-gradient-before: linear-gradient(
+    146deg,
+    rgba(166, 148, 242, 1) 15%,
+    rgba(223, 173, 242, 1) 61%
+  );
+  --border-gradient-after: linear-gradient(
+    324deg,
+    rgba(166, 148, 242, 1) 15%,
+    rgba(223, 173, 242, 1) 61%
+  );
 }
 
 body {
@@ -66,12 +86,9 @@ body * {
   position: relative;
   width: 118px;
   height: 118px;
-  background-image: linear-gradient(
-    146deg,
-    rgba(50, 27, 144, 1) 15%,
-    rgba(125, 25, 163, 1) 61%
-  );
+  background-image: var(--border-gradient-before);
   border-radius: 50%;
+  backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   z-index: 1;
 }
@@ -84,11 +101,7 @@ body * {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: linear-gradient(
-    324deg,
-    rgba(50, 27, 144, 1) 15%,
-    rgba(125, 25, 163, 1) 61%
-  );
+  background: var(--border-gradient-after);
   transition: opacity 0.5s ease-out;
   z-index: 2;
   opacity: 0;
